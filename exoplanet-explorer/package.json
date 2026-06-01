@@ -1,0 +1,36 @@
+{
+  "name": "habiverse",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "fetch-data": "node --use-system-ca scripts/fetch-planets.mjs",
+    "predev": "npm run fetch-data || echo \"[warn] Planet pre-fetch failed — using cached or fallback data\"",
+    "dev": "node --use-system-ca node_modules/next/dist/bin/next dev",
+    "prebuild": "npm run fetch-data || echo \"[warn] Planet pre-fetch failed — using cached or fallback data\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.469.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.13.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^15.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
